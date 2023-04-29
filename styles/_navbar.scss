@@ -1,0 +1,108 @@
+@import 'colors';
+@import 'media-queries';
+@import 'constans';
+
+%aling-center{
+    display: flex;
+    align-items: center;
+}
+
+%hover-item{
+    transform: scale(1.2);
+    transition: .3s;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    z-index: 10;
+    position: relative;
+    box-shadow: 0 0 10px rgba($color: #000000, $alpha: .7);
+    
+    &-logo{ /* .navbar-logo */
+        color: $dark;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 2rem;
+        margin-left: 50px;
+        @extend %aling-center;
+        
+        &:hover{
+            @extend %hover-item;
+        }
+    }
+    
+    &_bars{
+        opacity: 1; //0 lanacak
+        cursor: pointer;
+        
+        @include tablet{
+            color: $dark;
+            opacity: 1;
+            position: absolute;
+            right: 20px;
+            top: calc(50% - 1rem);
+            font-size: 2rem;
+        }
+        
+        & i{
+            font-size: 3rem;
+        }
+
+
+        &:hover{
+            @extend %hover-item;
+        }
+    }
+    
+    &_menu{
+        margin-right: 20px;
+        @extend %aling-center;
+        
+        @include tablet{
+            display: none;
+            // display: none;
+        }
+        
+        &_list{
+            gap: 70px;
+            @extend %aling-center;
+            list-style-type: none;
+            
+            &_item{
+                margin-left: 10px;
+                padding: 1px 0;
+
+                &-link{
+                    text-decoration: none;
+                    color:  $lime;
+                    transition: .3s ease-in;
+                    font-size: 17px;
+
+                    &:hover{
+                        font-size: 10px;
+                        color: $orangeRed;
+                    }
+                }
+                
+                #button{
+                    padding: 10px 20px;
+                    border: none;
+                    outline: none;
+                    border-radius: $borderRadius;
+                    font-family: 'Poppins', sans-serif;
+                    font-family:'Courier New', Courier, monospace;
+                    background-color: $lime;
+                    color: $ligth;
+
+                    &:hover{
+                        background-color: $orangeRed;
+                    }
+                }
+            }
+        }
+    }
+}
+
+

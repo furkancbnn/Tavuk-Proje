@@ -1,0 +1,15 @@
+@import 'navbar';
+@import 'showcase';
+@import 'secondpage';
+@import 'foto-book';
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: initial;
+}
